@@ -12,7 +12,7 @@ const CHARSET: &[char] = &[
 
 fn main() {
     let args = env::args().collect::<Vec<String>>();
-    assert!(args.len() == 2, "expected only 2 args");
+    assert!(args.len() == 2, "expected only 1 arg");
     let l = args[1].parse::<usize>().expect("argument must be a number");
     println!("{}", generate_password(&mut rand::rng(), l));
 }
@@ -49,4 +49,3 @@ mod tests {
         assert_eq!(passwd, "LuVv[4?j<D");
     }
 }
-
