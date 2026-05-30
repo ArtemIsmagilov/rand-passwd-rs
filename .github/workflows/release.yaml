@@ -1,0 +1,27 @@
+name: Release
+
+on: push
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            suffix: ""
+            asset: rand-passwd-rs
+          - os: macos-latest
+            suffix: ""
+            asset: rand-passwd-rs
+          - os: windows-latest
+            suffix: .exe
+            asset: rand-passwd-rs.exe
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+      - run: cargo build --release
+      - run: mv target/release/rand-passwd-rs${{ matrix.suffix }} ${{ matrix.asset }}
+      - uses: softprops/action-gh-release@v3
+        if: github.ref_type == 'tag'
+        with:
+          files: ${{ matrix.asset }}
