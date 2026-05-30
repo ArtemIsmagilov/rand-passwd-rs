@@ -16,13 +16,13 @@ jobs:
         include:
           - os: ubuntu-latest
             suffix: ""
-            asset: rand-passwd-rs
+            asset: rand-passwd-rs-linux-x86_64
           - os: macos-latest
             suffix: ""
-            asset: rand-passwd-rs
+            asset: rand-passwd-rs-macos-x86_64
           - os: windows-latest
             suffix: .exe
-            asset: rand-passwd-rs.exe
+            asset: rand-passwd-rs-windows-x86_64.exe
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
