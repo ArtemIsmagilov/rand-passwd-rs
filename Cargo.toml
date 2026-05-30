@@ -2,6 +2,12 @@
 name = "rand-passwd-rs"
 version = "0.1.0"
 edition = "2024"
+description = "A password generator"
+readme = "README.md"
+repository = "https://github.com/ArtemIsmagilov/rand-passwd-rs"
+license = "MIT"
+keywords = ["password", "generator"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 rand = "0.10.1"
