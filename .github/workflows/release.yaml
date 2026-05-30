@@ -1,6 +1,9 @@
 name: Release
 
-on: push
+on:
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   build:
@@ -22,6 +25,5 @@ jobs:
       - run: cargo build --release
       - run: mv target/release/rand-passwd-rs${{ matrix.suffix }} ${{ matrix.asset }}
       - uses: softprops/action-gh-release@v3
-        if: github.ref_type == 'tag'
         with:
           files: ${{ matrix.asset }}
