@@ -1,5 +1,5 @@
 # Password generator
-
+[![Crates.io](https://img.shields.io/crates/v/rand-passwd-rs.svg)](https://crates.io/crates/rand-passwd-rs)
 ## Binary usage
 
 ```bash
